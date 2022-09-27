@@ -1,0 +1,63 @@
+*{
+    font-family: Nunito Sans;
+}
+.button{
+    background-color: #fafafa;
+    color: black;
+    margin-top: 2rem;
+}
+img{
+    width: 40%;
+    float: left;
+    margin-right: 5rem;
+}
+
+.mainDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.countyName{
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.property{
+    /* font-style: normal; */
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.value{
+    font-weight: 300;
+    font-size: 0.9rem;
+
+}
+
+.detailsLine{
+    margin-bottom: 0.5rem;
+}
+.BorCou{
+    margin-right: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 821px) {
+    /* For mobile phones: */
+    img {
+      float: none;
+      width: 80%;
+    }
+
+    .mainDiv{
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    .BorCou{
+        display: block;
+        margin-top: 2rem;
+    }
+
+  }

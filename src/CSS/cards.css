@@ -1,0 +1,35 @@
+.mainDiv{
+    font-family: Nunito Sans;
+}
+.property{
+    font-family: Nunito Sans;
+    font-weight: 600;
+}
+.value{
+    font-family: Nunito Sans;
+    padding-left: 0.3rem;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:active {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a {
+    display: inline-block;
+  }
