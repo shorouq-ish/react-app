@@ -12,7 +12,7 @@ function App() {
     
       <Routes>
           <Route exact path="/Details" element={<Details/>}  />
-          <Route exact path="/react-app" element={<Countries/>}  />
+          <Route exact path="/" element={<Countries/>}  />
 
           </Routes>
 

@@ -66,15 +66,45 @@ function Details() {
           </div>
           <div className="borders">
             <span className="BorCou">Border Countries:</span>
-            <Button variant="contained"
-            style={{textTransform: 'none'}}
-            sx={{ mt: 5, mb: 5, mr:2, backgroundColor: "#fafafa", color: "black" }}>France</Button>
-            <Button variant="contained"
-            style={{textTransform: 'none'}}
-            sx={{ mt: 5, mb: 5, mr:2, backgroundColor: "#fafafa", color: "black" }}>Germany</Button>
-            <Button variant="contained"
-            style={{textTransform: 'none'}}
-            sx={{ mt: 5, mb: 5, mr:2, backgroundColor: "#fafafa", color: "black" }}>NetherLands</Button>
+            <Button
+              variant="contained"
+              style={{ textTransform: "none" }}
+              sx={{
+                mt: 5,
+                mb: 5,
+                mr: 2,
+                backgroundColor: "#fafafa",
+                color: "black",
+              }}
+            >
+              France
+            </Button>
+            <Button
+              variant="contained"
+              style={{ textTransform: "none" }}
+              sx={{
+                mt: 5,
+                mb: 5,
+                mr: 2,
+                backgroundColor: "#fafafa",
+                color: "black",
+              }}
+            >
+              Germany
+            </Button>
+            <Button
+              variant="contained"
+              style={{ textTransform: "none" }}
+              sx={{
+                mt: 5,
+                mb: 5,
+                mr: 2,
+                backgroundColor: "#fafafa",
+                color: "black",
+              }}
+            >
+              NetherLands
+            </Button>
           </div>
         </div>
       </Container>
