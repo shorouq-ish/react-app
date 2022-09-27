@@ -3,6 +3,7 @@ import { Card } from "@mui/material";
 import {CardContent} from "@mui/material";
 import {CardMedia} from "@mui/material";
 import {Typography} from "@mui/material";
+import {Link} from "@mui/material";
 
 import '../CSS/cards.css';
 
@@ -12,7 +13,8 @@ function Cards(props) {
   return(
     
   <div class="mainDiv" >
-    <a href="/Details"><Card sx={{ml:{xs: 3, sm: 0}, mr:{xs: 3, sm: 0} }}>
+    <Link to="/details">
+    <Card sx={{ml:{xs: 3, sm: 0}, mr:{xs: 3, sm: 0} }}>
     <CardMedia
         component="img"
         height="170"
@@ -30,7 +32,8 @@ function Cards(props) {
         <div ><span class="property">Capital:</span><span class="value">{props.capital}</span></div>
         </Typography>
       </CardContent>
-    </Card></a>
+    </Card>
+    </Link>
   </div>
   );
 }
