@@ -3,15 +3,13 @@ import { Card } from "@mui/material";
 import {CardContent} from "@mui/material";
 import {CardMedia} from "@mui/material";
 import {Typography} from "@mui/material";
-import {Link} from "@mui/material";
+import {Link} from "react-router-dom";
 
 import '../CSS/cards.css';
 
 import "@fontsource/nunito-sans";
 function Cards(props) {
-  
   return(
-    
   <div class="mainDiv" >
     <Link to="/details">
     <Card sx={{ml:{xs: 3, sm: 0}, mr:{xs: 3, sm: 0} }}>
@@ -22,7 +20,7 @@ function Cards(props) {
         alt="flag"
         sx={{mb: 2}}
       />
-      <CardContent >
+      <CardContent>
       <Typography gutterBottom  component="div" sx={{fontWeight: '900', fontSize: '1.3rem', fontFamily:'Nunito Sans', mb: 2}} >
           {props.countryName}
         </Typography>

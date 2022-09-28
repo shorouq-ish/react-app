@@ -5,8 +5,11 @@ import "./CSS/details.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Container } from "@mui/material";
 import Image1 from "./assets/al.svg";
+import {useNavigate} from 'react-router-dom';
+
 
 function Details() {
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -15,7 +18,7 @@ function Details() {
           <Button
             variant="contained"
             sx={{ mt: 10, mb: 5, backgroundColor: "#fafafa", color: "black" }}
-            href="/"
+            onClick={() => navigate(-1)}
           >
             <ArrowBackIcon />
             Back
