@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CSS/App.css";
 import Header from "./components/Header";
 import { Grid } from "@mui/material";
@@ -8,66 +8,144 @@ import "@fontsource/nunito-sans";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 import { Box } from "@mui/material";
-import Image1 from './assets/al.svg';
-import Image2 from './assets/af.svg';
-import Image3 from './assets/al.svg';
-import Image4 from './assets/us.svg';
-import Image5 from './assets/de.svg';
-import Image6 from './assets/dz.svg';
-import Image7 from './assets/is.svg';
-import Image8 from './assets/br.svg';
-import {Link} from "react-router-dom";
+import DragDrop from "./components/DragDrop";
 
-function Countries(){
+let all1 =[];
 
-    return (
+init();
+  async function init(){
+     all1 = await fetchData("all");
+    // setallData(all1);
+
+    // console.log(allData);
+  }
+ function fetchData(searchByName){
+  return fetch("https://restcountries.com/v3.1/" + searchByName)
+  .then((response) => response.json());
+}
+
+function Countries() {
+  // let searchByName = "all";
+  // let allData =[];
+
+
+  
+
+  
+
+  const [searchValue, setSearchValue] = useState("");
+  const SearchToCountries = (search) => {
+    setSearchValue(search);
+  };
+
+  const [filterValue, setFilterValue] = useState("");
+  const FilterToCountries = (filter) => {
+    console.log("filter:" + filter);
+    setFilterValue(filter);
+  };
+
+  let [countries, setCountries] = useState([]);
+
+  function filterCountries(filteredData) {
+    if (filterValue != "") {
+      let filterCountry = filteredData.filter((country) => {
+        return country.region.includes(filterValue);
+      });
+
+      console.log(filterCountry);
+      setCountries(filterCountry);
+    }
+  }
+
+  useEffect(() => {
+    // let all = await fetchData("all");
+    // setallData(all);
+    searchData();
+  }, [searchValue]);
+  
+  useEffect(() => {
+    console.log(all1);
+    if(searchValue != ""){
+      console.log(countries);
+      filterCountries(countries);
+    }
+    else{
+    filterCountries(all1);
+    }
+
+    console.log(countries);
+  }, [filterValue]);
+
+  
+
+  async function searchData() {
+    let filteredData=[];
+    let searchByName ="all";
+    console.log("searchValue: " + searchValue);
+    if (searchValue != "") {
+      searchByName = "name/" + searchValue;
+    }
+    
+    filteredData = await fetchData(searchByName);
+    console.log("filteredData"+filteredData);
+    if (filterValue != "") {
+      filterCountries(filteredData);
+    }
+    else{
+      setCountries(filteredData);
+    }
+  }
+
+  
+
+  return (
+    <div>
+      <Header />
+      <Container maxWidth="lg">
         <div>
-          
-    
-          <Header/>
-    
-          <Container maxWidth="lg" >
-            <div>
-            
-            
-              <Box sx={{ display: 'flex' ,justifyContent: 'space-between', flexDirection: {md:'row', lg:'row', xl:'row', sm: 'row', xs: 'column'} ,mt: 10}}>
-                <Search />
-                <Filter />
-              </Box>
-              
-            </div>
-            <div>
-              <Grid container spacing={5}>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName = "Albania" img={Image1} population="2,886,026" region="Europe" capital="Tirana" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName ="Afghanestan"  img={Image2} population="27,657,145" region="Asia" capital="Kabul" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName = "Germany" img={Image5} population="81,770,900" region="Europe" capital="Berlin" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName ="United States" img={Image3} population="323,747,000" region="Americas" capital="Whashington" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName = "United States" img={Image4} population="323,747,000" region="Americas" capital="Whashington" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName ="Algeria" img={Image6} population="40,400,000" region="Africa" capital="Algerias" />
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName = "Iceland" img={Image7} population="334,300" region="Europe"  capital="Reykjavik"/>
-                </Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3}>
-                  <Cards countryName ="Brazil" img={Image8} population="206,135,893" region="Americas" capital="Brasilia" />
-                </Grid>
-              </Grid>
-            </div>
-          </Container>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexDirection: {
+                md: "row",
+                lg: "row",
+                xl: "row",
+                sm: "row",
+                xs: "column",
+              },
+              mt: 10,
+            }}
+          >
+            <Search SearchToCountries={SearchToCountries} />
+            <Filter FilterToCountries={FilterToCountries} />
+          </Box>
         </div>
-      );
-
+        <div>
+          <Grid container spacing={5}>
+            <Grid item sm={4} md={3} lg={3}>
+              <DragDrop />
+            </Grid>
+            <Grid item xs={12} sm={4} md={9} lg={9}>
+              <Grid container spacing={5}>
+                {countries.map((country) => (
+                  <Grid item xs={12} sm={12} md={4} lg={4}>
+                    <Cards
+                      countryName={country.name.common}
+                      img={country.flags.svg}
+                      population={country.population.toLocaleString("en-US")}
+                      region={country.region}
+                      capital={country.capital}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+        </div>
+      </Container>
+    </div>
+  );
 }
 
 export default Countries;

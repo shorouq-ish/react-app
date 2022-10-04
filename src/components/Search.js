@@ -1,10 +1,15 @@
-import React from "react";
+import React,{useState} from "react";
 import { InputAdornment } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { TextField } from "@mui/material";
 
-function Search() {
-  
+function Search({SearchToCountries}) {
+
+
+  function handelChange(e){
+    {SearchToCountries(e.target.value)}
+
+  }
 
   return (
     <TextField
@@ -12,6 +17,8 @@ function Search() {
       style={{
         backgroundColor: "white",
       }}
+      onChange={handelChange }
+      
       placeholder="Search for a country..."
       InputProps={{
         startAdornment: (

@@ -1,0 +1,18 @@
+.favImage{
+    height: 30px;
+    width: 65px;
+    
+    margin-right: 10px;
+    margin-top: 10px;
+    border-radius: 7px;
+}
+
+.countryName{
+    display: inline-block;
+    padding-top:0.8rem;
+}
+
+.countryItem{
+    display: flex;
+    justify-content: space-between;
+}
