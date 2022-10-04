@@ -85,9 +85,11 @@ function Countries() {
     if (searchValue != "") {
       searchByName = "name/" + searchValue;
     }
+
+    console.log("searchByName: " +searchByName );
     
     filteredData = await fetchData(searchByName);
-    console.log("filteredData"+filteredData);
+    console.log(filteredData);
     if (filterValue != "") {
       filterCountries(filteredData);
     }
