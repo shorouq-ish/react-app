@@ -4,36 +4,40 @@ import { CardContent } from "@mui/material";
 import { CardMedia } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-
-import "../CSS/cards.css";
+import "../CSS/CounrtyCard.css";
 
 import "@fontsource/nunito-sans";
-function Cards(props) {
+
+function CounrtyCard(props) {
+
+  
+
   return (
-    <div class="mainDiv">
-      <Link to="/details">
-        <Card sx={{ ml: { xs: 3, sm: 0 }, mr: { xs: 3, sm: 0 } }}>
+    <div class="card-item"  >
+      <Link to="/details" state={{countryName: props.countryName }}>
+        <Card  sx={{ ml: { xs: 3, sm: 0 }, mr: { xs: 3, sm: 0 } }} >
           <CardMedia
             component="img"
             height="170"
             image={props.img}
             alt="flag"
-            sx={{ mb: 2 }}
+            sx={{ mb: 3 }}
           />
-          <CardContent>
+          
+          <CardContent sx={{p: 3.5}}>
             <Typography
               gutterBottom
               component="div"
               sx={{
                 fontWeight: "900",
-                fontSize: "1.3rem",
+                fontSize: "1.4rem",
                 fontFamily: "Nunito Sans",
-                mb: 2,
+                mb: 1.5,
               }}
             >
               {props.countryName}
             </Typography>
-            <Typography>
+            <Typography sx={{pb:2.5}}>
               <div>
                 <span class="property">Population:</span>
                 <span class="value">{props.population}</span>
@@ -54,4 +58,4 @@ function Cards(props) {
   );
 }
 
-export default Cards;
+export default CounrtyCard;

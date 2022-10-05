@@ -1,9 +1,10 @@
-.mainDiv{
+.card-item{
     font-family: Nunito Sans;
 }
 .property{
     font-family: Nunito Sans;
     font-weight: 600;
+    font-size: 1.07rem;
 }
 .value{
     font-family: Nunito Sans;
