@@ -4,7 +4,9 @@ import { MenuItem } from "@mui/material";
 import { InputLabel } from "@mui/material";
 import "../CSS/filter.css";
 
+
 function Filter({ FilterToCountries }) {
+  
   function handelChange(e) {
     {
       FilterToCountries(e.target.value);
@@ -14,8 +16,8 @@ function Filter({ FilterToCountries }) {
   return (
     <div>
       <FormControl
-        sx={{ width: 200, mb: 5, boxShadow: 1, border: 0 }}
-        className="filterComp"
+        sx={{ width: 200, mb: 5, border: "0px" }}
+        className="filterComp "
       >
         <InputLabel id="demo-simple-select-label">Filter By Region</InputLabel>
         <Select

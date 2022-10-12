@@ -1,0 +1,46 @@
+:root{
+    --primary-color : #fafafa;
+    --secondary-color : white;
+    --text-color : black;
+
+}
+[data-theme ='dark']{
+    --primary-color : #202c37;
+    --secondary-color : #2b3945;
+    --text-color : white;
+}
+
+header{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+#drop{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+
+}
+
+.filter{
+    background-color: black;
+    color: var(--text-color);
+}
+.textField{
+    background-color: black;
+    color: var(--text-color);
+}
+
+.country-card{
+    background-color: var(--secondary-color);
+    color: var(--text-color); 
+    border-radius: 5px;
+
+}
+.media{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+body{
+    background-color: var(--primary-color);
+}

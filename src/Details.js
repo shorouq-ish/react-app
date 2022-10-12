@@ -4,9 +4,7 @@ import { Button } from "@mui/material";
 import "./CSS/details.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { Container } from "@mui/material";
-import Image1 from "./assets/al.svg";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useDrag } from "react-dnd";
 
 function Details() {
   const navigate = useNavigate();

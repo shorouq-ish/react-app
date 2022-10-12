@@ -1,17 +1,15 @@
 .drop{
     background-color: white;
-    height: 500px;
+    height: 3%;
     box-shadow: 2px 2px 5px 1px #e7e6e6;
     border-radius: 5px;
     padding: 1.2rem;
     position: sticky;
     top:70px;
-    
 }
 
 .fav-title{
     font-size: 1.1rem;
     font-weight: 900;
     margin-bottom: 0.8rem;
-
 }

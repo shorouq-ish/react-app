@@ -1,27 +1,25 @@
-import * as React from "react";
+
 import { Box } from "@mui/system";
 import { Container } from "@mui/material";
 import "../CSS/header.css";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import { FaRegMoon } from "react-icons/fa";
+
 function Header() {
   return (
-    <header>
+    
+    <header >
       <Container>
         <Box
+          
           sx={{ display: "flex", justifyContent: "space-between" }}
-          style={{
-            backgroundColor: "white",
-          }}
         >
           <div class="header-title">Where in the world?</div>
-          <div>
+          <div >
             <span className="moon-icon">
-              <DarkModeOutlinedIcon
-                alignItems="center"
-                sx={{ fontSize: "0.9rem" }}
-              />
+              <FaRegMoon />
             </span>
-            <span class="dark-mode">Dark Mode</span>
+
+            <span class="dark-mode"> Dark Mode</span>
           </div>
         </Box>
       </Container>
