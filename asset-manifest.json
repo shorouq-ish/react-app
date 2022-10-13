@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.88168c2b.css",
-    "main.js": "/react-app/static/js/main.a3ca74ef.js",
+    "main.css": "/react-app/static/css/main.83975bc3.css",
+    "main.js": "/react-app/static/js/main.0a7703bb.js",
     "static/media/nunito-sans-all-400-normal.woff": "/react-app/static/media/nunito-sans-all-400-normal.6829d5bb0386828b00bc.woff",
     "static/media/nunito-sans-latin-400-normal.woff2": "/react-app/static/media/nunito-sans-latin-400-normal.5c4de521b020a610c232.woff2",
     "static/media/nunito-sans-latin-ext-400-normal.woff2": "/react-app/static/media/nunito-sans-latin-ext-400-normal.3d7d18f958c14dddfbc0.woff2",
@@ -9,11 +9,11 @@
     "static/media/nunito-sans-cyrillic-400-normal.woff2": "/react-app/static/media/nunito-sans-cyrillic-400-normal.1dd0800644712a9519d0.woff2",
     "static/media/nunito-sans-vietnamese-400-normal.woff2": "/react-app/static/media/nunito-sans-vietnamese-400-normal.d68ebb752ccf1a0cdcef.woff2",
     "index.html": "/react-app/index.html",
-    "main.88168c2b.css.map": "/react-app/static/css/main.88168c2b.css.map",
-    "main.a3ca74ef.js.map": "/react-app/static/js/main.a3ca74ef.js.map"
+    "main.83975bc3.css.map": "/react-app/static/css/main.83975bc3.css.map",
+    "main.0a7703bb.js.map": "/react-app/static/js/main.0a7703bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.88168c2b.css",
-    "static/js/main.a3ca74ef.js"
+    "static/css/main.83975bc3.css",
+    "static/js/main.0a7703bb.js"
   ]
 }
