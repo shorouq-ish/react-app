@@ -2,14 +2,12 @@ import { FormControl } from "@mui/material";
 import { Select } from "@mui/material";
 import { MenuItem } from "@mui/material";
 import { InputLabel } from "@mui/material";
-import "../CSS/filter.css";
+import "../CSS/theme.css";
 
-
-function Filter({ FilterToCountries }) {
-  
+function Filter({ onChange, theme }) {
   function handelChange(e) {
     {
-      FilterToCountries(e.target.value);
+      onChange(e.target.value);
     }
   }
 
@@ -17,19 +15,20 @@ function Filter({ FilterToCountries }) {
     <div>
       <FormControl
         sx={{ width: 200, mb: 5, border: "0px" }}
-        className="filterComp "
+        className="filterComp"
+        data-theme={theme}
       >
         <InputLabel id="demo-simple-select-label">Filter By Region</InputLabel>
         <Select
+          data-theme={theme}
           onChange={handelChange}
-          style={{
-            backgroundColor: "white",
-          }}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Filter By Region"
         >
-          <MenuItem value={"Africa"}>Africa</MenuItem>
+          <MenuItem data-theme={theme} className="menu-item" value={"Africa"}>
+            Africa
+          </MenuItem>
           <MenuItem value={"Americas"}>Americas</MenuItem>
           <MenuItem value={"Asia"}>Asia</MenuItem>
           <MenuItem value={"Europe"}>Europe</MenuItem>

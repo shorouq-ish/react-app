@@ -1,7 +1,7 @@
 .drop{
     background-color: white;
     height: 3%;
-    box-shadow: 2px 2px 5px 1px #e7e6e6;
+    /* box-shadow: 2px 2px 5px 1px #e7e6e6; */
     border-radius: 5px;
     padding: 1.2rem;
     position: sticky;

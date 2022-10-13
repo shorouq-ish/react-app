@@ -7,11 +7,12 @@ import { Link } from "react-router-dom";
 import "../CSS/CounrtyCard.css";
 import "@fontsource/nunito-sans";
 import { useDrag } from "react-dnd";
-import useLocalStorage from "use-local-storage";
 import "../CSS/theme.css";
+import StarIcon from "@mui/icons-material/Star";
+import { Hidden } from "@mui/material";
 
 function CounrtyCard(props) {
-
+  let color = "lightgray";
   const [{ isDragging }, drag] = useDrag({
     type: "card",
     item: { name: props.countryName, flag: props.img },
@@ -20,29 +21,50 @@ function CounrtyCard(props) {
     }),
   });
 
+  function mobileFavourite(e) {
+    {
+      console.log(props.countryName);
+      const colorStyle = window
+        .getComputedStyle(e.target, null)
+        .getPropertyValue("color");
+      console.log(colorStyle);
+      if (colorStyle === "rgb(211, 211, 211)") {
+        color = "gray";
+      } else {
+        color = "gold";
+      }
+
+      props.onClick(props.countryName, props.img, color);
+    }
+  }
+
   return (
-    <div class="card-item" >
-      <Link to="/details" state={{ countryName: props.countryName }}>
-        <Card
+    <div class="card-item">
+      <Card
+        data-theme={props.theme}
         class="country-card"
-          elevation={3}
-          sx={{ ml: { xs: 3, sm: 0 }, mr: { xs: 3, sm: 0 } }}
-          ref={drag}
-          style={{
-            opacity: isDragging ? "0.5" : "1",
-            boxShadow: "1px 1px 5px 1px #e9e8e8",
-          }}
-        >
+        elevation={3}
+        sx={{ ml: { xs: 3, sm: 0 }, mr: { xs: 3, sm: 0 } }}
+        ref={drag}
+        style={{
+          opacity: isDragging ? "0.5" : "1",
+          // boxShadow: "1px 1px 5px 1px #e9e8e8",
+        }}
+      >
+        <Link to={"/details/" + props.countryName}>
           <CardMedia
-          className="media"
+            className="media"
             component="img"
             height="170"
             image={props.img}
             alt="flag"
-            sx={{ mb: 3  }}
+            sx={{ mb: 3 }}
           />
 
-          <CardContent sx={{ p: 3.5 }}>
+          <CardContent
+            sx={{ p: 3.5 }}
+            data-theme={props.theme}
+          >
             <Typography
               gutterBottom
               component="div"
@@ -55,7 +77,7 @@ function CounrtyCard(props) {
             >
               {props.countryName}
             </Typography>
-            <Typography sx={{ pb: 2.5 }}>
+            <Typography sx={{ pb: 0.5 }}>
               <div>
                 <span class="property">Population:</span>
                 <span class="value">{props.population}</span>
@@ -70,8 +92,22 @@ function CounrtyCard(props) {
               </div>
             </Typography>
           </CardContent>
-        </Card>
-      </Link>
+        </Link>
+        <Hidden only={["sm", "md", "lg", "xl"]}>
+        <div class="starIcon">
+            <div></div>
+            <StarIcon
+              id={props.countryName}
+              className={
+                props.favourits.includes(props.countryName) ? "gold" : "gray"
+              }
+              sx={{ mr: 1, mb: 1 }}
+              onClick={mobileFavourite}
+            />
+          </div>
+        </Hidden>
+        
+      </Card>
     </div>
   );
 }

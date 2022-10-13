@@ -1,11 +1,7 @@
 *{
     font-family: Nunito Sans;
 }
-.button{
-    background-color: #fafafa;
-    color: black;
-    margin-top: 2rem;
-}
+
 img{
     width: 45%;
     float: left;
@@ -24,7 +20,6 @@ img{
 }
 
 .property{
-    /* font-style: normal; */
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -38,6 +33,8 @@ img{
 .detailsLine{
     margin-bottom: 0.5rem;
 }
+
+
 .BorCou{
     margin-right: 0.5rem;
     font-weight: 600;
@@ -45,7 +42,6 @@ img{
 }
 
 @media only screen and (max-width: 821px) {
-    /* For mobile phones: */
     img {
       float: none;
       width: 80%;

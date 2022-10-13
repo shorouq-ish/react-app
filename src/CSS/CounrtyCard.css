@@ -34,3 +34,16 @@ a:link {
   a {
     display: inline-block;
   }
+
+  .starIcon{
+     display: flex;
+     justify-content: space-between;
+  }
+
+  .gold{
+    color: gold;
+  }
+
+  .gray{
+    color: lightgrey;
+  }

@@ -2,38 +2,74 @@
     --primary-color : #fafafa;
     --secondary-color : white;
     --text-color : black;
+    --border: 2px 2px 5px 1px #e9e8e8;
+
 
 }
 [data-theme ='dark']{
     --primary-color : #202c37;
     --secondary-color : #2b3945;
     --text-color : white;
+    --border : 0px;
+
+}
+
+*{
+    margin: 0;
 }
 
 header{
     background-color: var(--secondary-color);
     color: var(--text-color);
+    box-shadow: var(--border);
 }
 
 #drop{
     background-color: var(--secondary-color);
     color: var(--text-color);
+    box-shadow: var(--border);
 
 }
 
 .filter{
     background-color: black;
     color: var(--text-color);
+    box-shadow: var(--border);
 }
 .textField{
-    background-color: black;
+    background-color: var(--secondary-color);
     color: var(--text-color);
+    border-radius: 5px;
+    box-shadow: var(--border);
 }
 
+.searchIcon{
+    color: var(--text-color);
+}
+.textField ::placeholder {
+    color: white;
+}
+
+.filterComp{
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: var(--border);
+}
+#demo-simple-select{
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+
+}
+
+.menu-item{
+    background-color: var(--secondary-color);
+}
 .country-card{
     background-color: var(--secondary-color);
     color: var(--text-color); 
     border-radius: 5px;
+    box-shadow: var(--border);
+
 
 }
 .media{
@@ -41,6 +77,31 @@ header{
     border-top-right-radius: 4px;
 }
 
-body{
+.body{
     background-color: var(--primary-color);
+    font-family: Nunito Sans;
+    min-height: 800px;
+
+}
+
+.filter-box{
+    background-color: var(--primary-color);
+    
+
+}
+
+.button{
+    background-color: red;
+    color: var(--text-color); 
+
+}
+.detail{
+    color: var(--text-color); 
+}
+.main{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+
+
 }
