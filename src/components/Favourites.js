@@ -19,7 +19,6 @@ function Favourites({ onDrop, favourits, onClick, theme }) {
 
   const deleteItem = (id) => {
     {
-      console.log(id);
       onClick(id);
     }
   };

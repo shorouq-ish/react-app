@@ -23,11 +23,9 @@ function CounrtyCard(props) {
 
   function mobileFavourite(e) {
     {
-      console.log(props.countryName);
       const colorStyle = window
         .getComputedStyle(e.target, null)
         .getPropertyValue("color");
-      console.log(colorStyle);
       if (colorStyle === "rgb(211, 211, 211)") {
         color = "gray";
       } else {

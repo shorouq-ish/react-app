@@ -4,7 +4,6 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 function DropedItem({ name, flag, onClick }) {
   function deleteItem(e) {
     {
-      console.log(e.target.id);
       onClick(e.target.id);
     }
   }
